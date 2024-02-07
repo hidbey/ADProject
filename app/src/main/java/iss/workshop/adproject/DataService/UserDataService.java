@@ -10,6 +10,8 @@ import java.util.List;
 
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
+import retrofit2.http.Path;
 
 public interface UserDataService {
 
@@ -19,4 +21,7 @@ public interface UserDataService {
     @Headers("Content-Type: application/json")
     @POST("/account/api/bloguser")
     Call<ResponseBody> createUser(@Body BlogUser user);
+
+    @PUT("/user/api/setting/{id}")
+    Call<ResponseBody>updateUser(@Path("id")int id, @Body BlogUser inUser);
 }

@@ -44,7 +44,7 @@ public class signUp extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.1.126:8080/") // 替换为您的API的基础URL,必须以斜杠结尾
+                .baseUrl("http://10.249.225.127:8080/") // 替换为您的API的基础URL,必须以斜杠结尾
                 .addConverterFactory(GsonConverterFactory.create())
                 //.client(okHttpClient)
                 .build();

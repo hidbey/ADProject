@@ -56,7 +56,7 @@ public class Login extends AppCompatActivity {
 
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.1.126:8080/") // 替换为您的API的基础URL,必须以斜杠结尾
+                .baseUrl("http://10.249.225.127:8080/") // 替换为您的API的基础URL,必须以斜杠结尾
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -80,10 +80,7 @@ public class Login extends AppCompatActivity {
         });
     }
 
-    public void inHomePage() {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-    }//进入主界面
+
 
     public void ifExist(String userName, String password) {
         Call<List<BlogUser>> call = uDService.findAllActiveUser();
@@ -117,4 +114,9 @@ public class Login extends AppCompatActivity {
         Intent intent = new Intent(this,signUp.class);
         startActivity(intent);
     }//进入注册页面
+
+    public void inHomePage() {
+        Intent intent = new Intent(this, HomeActivity.class);
+        startActivity(intent);
+    }//进入主界面
 }
